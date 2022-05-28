@@ -17,7 +17,7 @@ final class MotionManager {
     let filePath: String = {
         let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
         let documentsDirectory = paths[0] as NSString
-        return documentsDirectory.appendingPathComponent("KATA.csv")
+        return documentsDirectory.appendingPathComponent("SensorDataCollector.csv")
     }()
 
     private lazy var manager: CMMotionManager = {
