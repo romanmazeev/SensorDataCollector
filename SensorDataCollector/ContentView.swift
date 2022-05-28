@@ -57,9 +57,15 @@ struct ContentView: View {
                     return
                 }
 
-                isCollecting = true
+                withAnimation {
+                    isCollecting = true
+                }
+
                 motionManager.getAndSaveMotions(framesCount: framesCount) { result in
-                    isCollecting = false
+                    withAnimation {
+                        isCollecting = false
+                    }
+
                     switch result {
                     case .success:
                         isShareSheetPresented = true
